@@ -7,7 +7,8 @@ docker build --build-arg SCRIPT_DIRECTORY="$($PWD.Path)" -t binwalkv3 .
 # もしくは Get-Location
 docker build --build-arg SCRIPT_DIRECTORY="$(Get-Location)" -t binwalkv3 .
 
-
+# 実行
+docker run -it --rm -v "$(pwd):/work" binwalkv3 -Me
 
 # SBOM生成ツールSyft
 https://github.com/anchore/syft
